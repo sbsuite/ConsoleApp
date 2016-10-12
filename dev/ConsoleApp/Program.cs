@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using node1_1;
+using node2_1;
 
 namespace ConsoleApp
 {
@@ -19,8 +20,9 @@ namespace ConsoleApp
          try
          {
 
-//            var model = new Model();
-//            var modelExport = new node1_1.ModelExportService();
+            var model = new Model();
+            var modelExport = new node1_1.ModelExportService(new ReportingServices());
+            var success=  await modelExport.ExportModel(model, "toto");
 
          }
          catch (Exception ex)
