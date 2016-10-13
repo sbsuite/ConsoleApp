@@ -15,6 +15,9 @@ cache:
 before_build:
   - nuget restore
 
+after_test:
+  cmd: exit /b 1
+
 nuget:
   account_feed: true
 
