@@ -16,7 +16,7 @@ before_build:
   - nuget restore
 
 after_test:
-  cmd: exit /b 1
+  cmd: exit /b 0
 
 nuget:
   account_feed: true
