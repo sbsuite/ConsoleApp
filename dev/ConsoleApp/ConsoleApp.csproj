@@ -65,8 +65,8 @@
       <HintPath>..\..\packages\SBSuite.DevExpress.1.0.2\lib\net452\DevExpress.XtraLayout.v15.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="node1.1, Version=1.1.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SBSuite.TestPackages.Package1.1.1.1.7\lib\net452\node1.1.dll</HintPath>
+    <Reference Include="node1.1, Version=1.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SBSuite.TestPackages.Package1.1.1.1.8\lib\net452\node1.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="node1.2, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
@@ -77,12 +77,12 @@
       <HintPath>..\..\packages\SBSuite.TestPackages.Package1.3.1.2.6\lib\net452\node1.3.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="node2.1, Version=1.1.19.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SBSuite.TestPackages.Package2.1.1.1.19\lib\net452\node2.1.dll</HintPath>
+    <Reference Include="node2.1, Version=1.5.20.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SBSuite.TestPackages.Package2.1.1.5.20\lib\net452\node2.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="node3.1, Version=1.2.49.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SBSuite.TestPackages.Package3.1.1.2.49\lib\net452\node3.1.dll</HintPath>
+    <Reference Include="node3.1, Version=1.2.50.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SBSuite.TestPackages.Package3.1.1.2.50\lib\net452\node3.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
