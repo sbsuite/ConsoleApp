@@ -16,7 +16,7 @@ before_build:
   - nuget restore
 
 after_test:
-  cmd: TestApp\bin\Debug\TestApp.exe
+  cmd: dev\TestApp\bin\Debug\TestApp.exe
 
 nuget:
   account_feed: true
