@@ -11,6 +11,7 @@ namespace ConsoleApp.Tests
       public void this_is_an_integrations_test()
       {
          Assert.IsTrue(true);
+
       }
 
       [Test]
