@@ -15,6 +15,9 @@ cache:
 before_build:
   - nuget restore
 
+nuget:
+  account_feed: true
+
 test:
   categories:
     except:
