@@ -8,7 +8,7 @@
             {
                 System.Console.WriteLine(arg);
             }
-            return 1;
+            return 0;
         }
     }
 }
