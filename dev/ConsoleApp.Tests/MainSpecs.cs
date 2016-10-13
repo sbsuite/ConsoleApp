@@ -16,6 +16,7 @@ namespace ConsoleApp.Tests
       [Test]
       public void this_is_a_standard_test()
       {
+
          Assert.IsTrue(true);
       }
    }
