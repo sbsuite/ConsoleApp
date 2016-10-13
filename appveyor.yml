@@ -17,7 +17,6 @@ before_build:
 
 nuget:
   account_feed: true
-  project_feed: true
 
 test:
   categories:
