@@ -18,6 +18,10 @@ before_build:
 after_test:
   cmd: dev\TestApp\bin\Release\TestApp.exe these are arguments
 
+artifacts:
+  - path: dev\GuiApp\bin\Release
+    name: MyApp
+
 nuget:
   account_feed: true
 
