@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="ConsoleApp.Setup" Language="1033" Version="1.0.0.0" Manufacturer="" UpgradeCode="8ccf01db-2e78-4675-8c42-7af62ad6e575">
+	<Product Id="*" Name="ConsoleApp.Setup" Language="1033" Version="1.0.0.0" Manufacturer="Design2code" UpgradeCode="8ccf01db-2e78-4675-8c42-7af62ad6e575">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -21,12 +21,9 @@
 
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-		  <Component Id='Comp' Guid='547B4679-57F9-418C-AF50-5FBB592A9D34'>
-		    <File Name='ConsoleApp.exe' Id='Comp' Source='$(var.DeployDir)/Comp.dll' KeyPath='yes' />
-		  </Component>
-
-		  <ComponentRef Id="Comp" />
-
+			 <Component Id="ProductComponent">
+         <File Source="$(var.ConsoleApp.TargetPath)" />
+			</Component> 
 		</ComponentGroup>
 	</Fragment>
 </Wix>
