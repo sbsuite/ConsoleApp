@@ -51,7 +51,7 @@ namespace TestApp
                 {
                     CreateNoWindow = true,
                     UseShellExecute = true,
-                    FileName = Path.Combine(MikTexExecutablePath, "texify.exe"),
+                    FileName = Path.Combine(MikTexExecutablePath, "texife.exe"),
                     WindowStyle = ProcessWindowStyle.Hidden,
                     Arguments = "--help",
                     WorkingDirectory = workingDirectory
