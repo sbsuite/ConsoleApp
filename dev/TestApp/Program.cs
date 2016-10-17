@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
+using System.IO;
+using System.Threading.Tasks;
 using Microsoft.Win32;
 
 namespace TestApp
@@ -34,9 +37,35 @@ namespace TestApp
 
             Console.WriteLine($"MikText is installed: {MikTEXPortablePath}");
 
+            var returnCode =  runCompiler(Environment.CurrentDirectory).Result;
 
-            return 0;
+            return returnCode;
         }
+
+        private static Task<int> runCompiler(string workingDirectory)
+        {
+            return Task.Run(() =>
+            {
+                // Use ProcessStartInfo class
+                var startInfo = new ProcessStartInfo
+                {
+                    CreateNoWindow = true,
+                    UseShellExecute = true,
+                    FileName = Path.Combine(MikTexExecutablePath, "texify.exe"),
+                    WindowStyle = ProcessWindowStyle.Hidden,
+                    Arguments = "--help",
+                    WorkingDirectory = workingDirectory
+                };
+
+                using (var exeProcess = Process.Start(startInfo))
+                {
+                    exeProcess.WaitForExit();
+                    return exeProcess.ExitCode;
+                }
+            });
+        }
+
+        public static string MikTexExecutablePath => Path.Combine(MikTEXPortablePath, "miktex", "bin");
     }
 
     public class MikTexInstallationException : Exception
@@ -47,7 +76,7 @@ namespace TestApp
 
         public MikTexInstallationException(Exception exception)
         {
-            
+
         }
     }
 
