@@ -5,9 +5,9 @@
     </Fragment>
     <Fragment>
         <ComponentGroup Id="node1.2">
-            <Component Id="cmp4DF9D1CCFBAE1D247E255D7775964897" Directory="INSTALLDIR" Guid="{B4CD4CEF-9D59-44CD-B06E-13E08991B138}">
-                <File Id="fil8EA2F7998E7E78F8312DC02091A8AB9E" KeyPath="yes" Source="$(var.GuiApp.TargetPath)" />
-            </Component>
+<!--            <Component Id="cmp4DF9D1CCFBAE1D247E255D7775964897" Directory="INSTALLDIR" Guid="{B4CD4CEF-9D59-44CD-B06E-13E08991B138}">-->
+<!--                <File Id="fil8EA2F7998E7E78F8312DC02091A8AB9E" KeyPath="yes" Source="$(var.GuiApp.TargetPath)" />-->
+<!--            </Component>-->
         </ComponentGroup>
     </Fragment>
 </Wix>
