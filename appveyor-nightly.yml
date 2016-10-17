@@ -16,6 +16,7 @@ install:
     msiexec /i C:\\MikTex.2.9.2.9711.msi /quiet /qn /norestart /log install.log
 
     cat install.log
+
     ls
 
 cache:
