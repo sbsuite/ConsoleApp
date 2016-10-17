@@ -9,6 +9,15 @@ assembly_info:
   assembly_file_version: "{version}"	
   assembly_informational_version: "{version}"
 
+install:
+- ps: >-
+    (new-object net.webclient).DownloadFile('https://ci.appveyor.com/api/buildjobs/tojql4tt0xu7orxa/artifacts/MikTex.2.9.2.9711.msi', 'C:\\MikTex.2.9.2.9711.msi')
+
+    Start-Process C:\Windows\System32\msiexec.exe -ArgumentList /i, C:\MikTex.2.9.2.9711.msi, /quiet, /qn, /norestart, /log, C:\install.log -Wait
+
+    cat C:\install.log
+
+    ls c:\
 
 cache:
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
