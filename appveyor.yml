@@ -19,7 +19,7 @@ before_build:
   - nuget restore
 
 after_test:
-  cmd: dev\TestApp\bin\Release\TestApp.exe these are arguments
+  cmd: dev\TestApp\bin\{configuration}\TestApp.exe these are arguments
 
 artifacts:
   - path: dev\GuiApp\bin\{configuration}
