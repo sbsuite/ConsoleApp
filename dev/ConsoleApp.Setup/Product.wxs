@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="ConsoleApp.Setup" Language="1033" Version="1.0.0.0" Manufacturer="Design2code" UpgradeCode="8ccf01db-2e78-4675-8c42-7af62ad6e575">
+	<Product Id="E17484DE-0CB3-43D3-98F4-B6A54E08B437" Name="ConsoleApp.Setup" Language="1033" Version="1.0.0.0" Manufacturer="Design2code" UpgradeCode="8ccf01db-2e78-4675-8c42-7af62ad6e575">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -25,11 +25,11 @@
 		    <File Source="$(var.ConsoleApp.TargetPath)" KeyPath='yes' />
 		  </Component>
 
-      <Component Id='ConsoleApp' Guid='DBF24780-CD46-4A90-984B-58B2A37245BD'>
+      <Component Id='GuiApp' Guid='DBF24780-CD46-4A90-984B-58B2A37245BD'>
         <File Source="$(var.GuiApp.TargetPath)" KeyPath='yes' />
       </Component>
 
-      <Component Id='ConsoleApp' Guid='A6CEFA1B-1D73-4F04-90A2-022E17498B55'>
+      <Component Id='TestApp' Guid='A6CEFA1B-1D73-4F04-90A2-022E17498B55'>
         <File Source="$(var.TestApp.TargetPath)" KeyPath='yes' />
       </Component>
 
