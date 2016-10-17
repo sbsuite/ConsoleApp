@@ -26,9 +26,7 @@ artifacts:
     name: MyApp
 
   - path: 'dev\ConsoleApp.Setup\bin\$(configuration)\*.msi'
-
-
-  
+	name: Setup
 
 nuget:
   account_feed: true
