@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLDIR" />
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="SBSuite.Core">
+            <Component Id="cmp4DF9D1CCFBAE1D247E255D7775964897" Directory="INSTALLDIR" Guid="{B4CD4CEF-9D59-44CD-B06E-13E08991B138}">
+                <File Id="fil8EA2F7998E7E78F8312DC02091A8AB9E" KeyPath="yes" Source="$(var.GuiApp.TargetPath)" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>
