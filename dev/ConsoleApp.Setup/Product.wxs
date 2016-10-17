@@ -19,7 +19,7 @@
     <!--Customisation of Features and install location-->
     <UIRef Id="WixUI_ErrorProgressText" />
     <WixVariable Id="WixUILicenseRtf" Value="EULA.rtf" />
-    <WixVariable Id="WixUIBannerBmp" Value="PKSimBanner.bmp" />
+    <WixVariable Id="WixUIBannerBmp" Value="Banner.bmp" />
 	</Product>
 
 	<Fragment>
