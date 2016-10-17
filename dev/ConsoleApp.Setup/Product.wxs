@@ -23,6 +23,8 @@
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
 			 <Component Id="ProductComponent">
          <File Source="$(var.ConsoleApp.TargetPath)" />
+         <File Source="$(var.GuiApp.TargetPath)" />
+         <File Source="$(var.TestApp.TargetPath)" />
 			</Component> 
 		</ComponentGroup>
 	</Fragment>
