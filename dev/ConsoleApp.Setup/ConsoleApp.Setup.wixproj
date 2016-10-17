@@ -28,9 +28,25 @@
     <Compile Include="Product.wxs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dev\ConsoleApp\ConsoleApp.csproj">
+    <ProjectReference Include="..\ConsoleApp\ConsoleApp.csproj">
       <Name>ConsoleApp</Name>
       <Project>{82eebebe-4933-4f95-816e-7a8688202609}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\GuiApp\GuiApp.csproj">
+      <Name>GuiApp</Name>
+      <Project>{cb7ab91b-6509-4fc0-9730-a55f50f19403}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\TestApp\TestApp.csproj">
+      <Name>TestApp</Name>
+      <Project>{52541523-2f29-49b8-8e52-c2fee712ee55}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
