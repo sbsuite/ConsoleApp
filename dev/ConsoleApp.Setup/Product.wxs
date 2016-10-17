@@ -10,6 +10,7 @@
 
 		<Feature Id="ProductFeature" Title="ConsoleApp.Setup" Level="1" Absent="disallow" AllowAdvertise="no">
 			<ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="node1.2" />
 		</Feature>
 
     <!-- UISection-->
@@ -20,18 +21,20 @@
     <UIRef Id="WixUI_ErrorProgressText" />
     <WixVariable Id="WixUILicenseRtf" Value="EULA.rtf" />
     <WixVariable Id="WixUIBannerBmp" Value="Banner.bmp" />
+<!--    FIND BETTER IMAGE-->
+<!--    <WixVariable Id="WixUIDialogBmp" Value="Banner.bmp" />-->
 	</Product>
 
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="ConsoleApp.Setup" />
+				<Directory Id="INSTALLDIR" Name="ConsoleApp.Setup" />
 			</Directory>
 		</Directory>
 	</Fragment>
 
 	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">		
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLDIR">		
 		  <Component Id='ConsoleApp' Guid='3A044936-F91A-47AE-97E6-698ADF0C0E6D'>
 		    <File Source="$(var.ConsoleApp.TargetPath)" KeyPath='yes' />
 		  </Component>
@@ -43,7 +46,6 @@
       <Component Id='TestApp' Guid='A6CEFA1B-1D73-4F04-90A2-022E17498B55'>
         <File Source="$(var.TestApp.TargetPath)" KeyPath='yes' />
       </Component>
-
 		</ComponentGroup>
 	</Fragment>
 </Wix>
