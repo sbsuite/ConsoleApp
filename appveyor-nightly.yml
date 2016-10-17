@@ -15,6 +15,9 @@ cache:
 nuget:
   account_feed: true
 
+after_test:
+  cmd: dev\TestApp\bin\Release\TestApp.exe these are arguments
+
 before_build:
   - nuget restore
 
