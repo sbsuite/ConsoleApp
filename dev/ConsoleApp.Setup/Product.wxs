@@ -8,8 +8,6 @@
     <Property Id="ALLUSERS" Value="1" />
     <Media Id="1" Cabinet="media1.cab" EmbedCab="yes" />
 
-    <MediaTemplate />
-
 		<Feature Id="ProductFeature" Title="ConsoleApp.Setup" Level="1" Absent="disallow" AllowAdvertise="no">
 			<ComponentGroupRef Id="ProductComponents" />
 		</Feature>
