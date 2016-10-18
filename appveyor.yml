@@ -1,6 +1,8 @@
 configuration: Setup
 
 version: '0.4.{build}'
+environment:
+  setup_project_name: ConsoleApp.Setup
 
 platform:
   - x86
@@ -26,7 +28,7 @@ artifacts:
   - path: dev\GuiApp\bin\$(configuration)
     name: MyApp
 
-  - path: 'dev\ConsoleApp.Setup\bin\$(configuration)\*.msi'
+  - path: 'dev\$(setup_project_name)\bin\$(configuration)\*.msi'
 
 nuget:
   account_feed: true
