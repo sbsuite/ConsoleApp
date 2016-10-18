@@ -23,7 +23,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Setup|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
-    <DefineConstants>DeployDir=..\$(SolutionName)\bin\$(Configuration)</DefineConstants>
+    <DefineConstants>DeployDir=..\src\$(SolutionName)\bin\$(Configuration)</DefineConstants>
     <Cultures>en-US</Cultures>
   </PropertyGroup>
   <ItemGroup>
