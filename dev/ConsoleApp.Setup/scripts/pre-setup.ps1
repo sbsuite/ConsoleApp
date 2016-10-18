@@ -3,3 +3,4 @@ foreach($fragment in $fragments)
 {
     Copy-Item $fragment  $env:APPVEYOR_BUILD_FOLDER\dev\$env:SETUP_PROJECT_NAME\fragments
 }
+$env:APP_VERSION
