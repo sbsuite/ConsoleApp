@@ -23,7 +23,7 @@ before_build:
   - ps: .\packages\**\tools\pre-setup.ps1
 
 after_test:
-  cmd: dev\TestApp\bin\%CONFIGURATION%\TestApp.exe these are arguments
+  cmd: src\TestApp\bin\%CONFIGURATION%\TestApp.exe these are arguments
 
 artifacts:
   - path: src\GuiApp\bin\$(configuration)
