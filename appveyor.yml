@@ -37,4 +37,4 @@ nuget:
 test:
   categories:
     except:
-      - IntegrationTest
+      - IntegrationTest	

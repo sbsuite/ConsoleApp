@@ -69,11 +69,9 @@
   <ItemGroup>
     <Content Include="Banner.bmp" />
     <Content Include="EULA.rtf" />
-    <Content Include="scripts\pre-setup.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fragments\" />
-    <Folder Include="scripts\" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
