@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="E17484DE-0CB3-43D3-98F4-B6A54E08B437" Name="ConsoleApp.Setup" Language="1033" Version="1.0.0.0" Manufacturer="Design2code" UpgradeCode="8ccf01db-2e78-4675-8c42-7af62ad6e575">
+	<Product Id="E17484DE-0CB3-43D3-98F4-B6A54E08B437" Name="ConsoleApp.Setup" Language="1033" Version="$(env.APP_VERSION)" Manufacturer="Design2code" UpgradeCode="8ccf01db-2e78-4675-8c42-7af62ad6e575">
     <Package InstallerVersion="200" Compressed="yes" InstallPrivileges="elevated" />
     <Condition Message='For a correct installation of the software, administrator rights are necessary. You do not have these rights. Please contact your IT-administrator to carry out the installation'>Privileged</Condition>
 
