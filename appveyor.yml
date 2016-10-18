@@ -29,7 +29,7 @@ artifacts:
   - path: src\GuiApp\bin\$(configuration)
     name: MyApp
 
-  - path: 'src\$(setup_project_name)\bin\$(configuration)\*.msi'
+  - path: '**\bin\$(configuration)\*.msi'
 
 nuget:
   account_feed: true
