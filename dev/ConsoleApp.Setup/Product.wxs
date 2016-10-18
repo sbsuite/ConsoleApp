@@ -12,7 +12,7 @@
 			<ComponentGroupRef Id="ProductComponents" />
       <ComponentGroupRef Id="node1.2" />
 		</Feature>
-
+   
     <!-- UISection-->
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
     <!--<UIRef Id="WixUI_Advanced" />-->

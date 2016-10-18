@@ -23,9 +23,11 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Setup|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>DeployDir=..\$(SolutionName)\bin\$(Configuration)</DefineConstants>
+    <Cultures>en-US</Cultures>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="node1.2.wxs" />
+    <Compile Include="fragments\node1.2.wxs" />
     <Compile Include="Product.wxs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,6 +69,11 @@
   <ItemGroup>
     <Content Include="Banner.bmp" />
     <Content Include="EULA.rtf" />
+    <Content Include="scripts\pre-setup.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="fragments\" />
+    <Folder Include="scripts\" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
