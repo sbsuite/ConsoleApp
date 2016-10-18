@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		appveyor-nightly.yml = appveyor-nightly.yml
 		appveyor.yml = appveyor.yml
+		test-and-cover.ps1 = test-and-cover.ps1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Tests", "dev\ConsoleApp.Tests\ConsoleApp.Tests.csproj", "{AF40E6D9-73D2-4FE5-9C12-7A30D61D5A28}"

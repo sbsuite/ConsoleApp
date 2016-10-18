@@ -1,6 +1,7 @@
-﻿using NUnit.Framework;
+﻿using ConsoleApp;
+using NUnit.Framework;
 
-namespace ConsoleApp.Tests
+namespace Tests.ConsoleApp
 {
    [TestFixture]
    public class MainSpecs
@@ -16,7 +17,8 @@ namespace ConsoleApp.Tests
       [Test]
       public void this_is_a_standard_test()
       {
-         Assert.IsTrue(true);
+         var testClass = new TestClass();
+         Assert.IsTrue(testClass.True());
       }
    }
 }

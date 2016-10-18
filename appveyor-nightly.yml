@@ -9,6 +9,10 @@ assembly_info:
   assembly_file_version: "{version}"	
   assembly_informational_version: "{version}"
 
+environment:
+  COVERALLS_REPO_TOKEN:
+    secure: v/xn8Q6QR9FsktGqr8V3oYpO88W2BXOIb/amH2c660IMGCZjw5qKJHCxHedX30vL
+
 install:
 - ps: >-
     (new-object net.webclient).DownloadFile('https://ci.appveyor.com/api/buildjobs/tojql4tt0xu7orxa/artifacts/MikTex.2.9.2.9711.msi', 'C:\\MikTex.2.9.2.9711.msi')
@@ -24,6 +28,9 @@ cache:
 
 nuget:
   account_feed: true
+
+test_script: 
+  - ps: ./test-and-cover.ps1
 
 after_test:
   cmd: dev\TestApp\bin\Release\TestApp.exe these are arguments
