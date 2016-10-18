@@ -15,6 +15,9 @@ cache:
 before_build:
   - nuget restore
 
+build:
+  project: ConsoleApp.sln 
+
 artifacts:
   - path: dev\GuiApp\bin\Release
     name: MyApp
