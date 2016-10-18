@@ -26,10 +26,10 @@ after_test:
   cmd: dev\TestApp\bin\%CONFIGURATION%\TestApp.exe these are arguments
 
 artifacts:
-  - path: dev\GuiApp\bin\$(configuration)
+  - path: src\GuiApp\bin\$(configuration)
     name: MyApp
 
-  - path: 'dev\$(setup_project_name)\bin\$(configuration)\*.msi'
+  - path: 'src\$(setup_project_name)\bin\$(configuration)\*.msi'
 
 nuget:
   account_feed: true
