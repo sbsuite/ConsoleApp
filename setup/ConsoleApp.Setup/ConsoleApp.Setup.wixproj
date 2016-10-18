@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Banner.bmp" />
     <Content Include="EULA.rtf" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fragments\" />
