@@ -2,6 +2,9 @@ configuration: Release
 
 version: '0.4.{build}'
 
+platform:
+  - x86
+
 assembly_info:
   patch: true
   file: AssemblyInfo.*
@@ -12,5 +15,9 @@ assembly_info:
 cache:
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
 
+nuget:
+  account_feed: true
+
 before_build:
   - nuget restore
+
