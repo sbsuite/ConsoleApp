@@ -3,7 +3,7 @@ configuration: Setup
 version: '0.4.2.{build}'
 environment:
   app_version: $(APPVEYOR_BUILD_VERSION)
-  setup_project_path: $(APPVEYOR_BUILD_FOLDER)\setup\Console.Setup
+  setup_project_path: $(APPVEYOR_BUILD_FOLDER)\setup\ConsoleApp.Setup
 
 platform:
   - x86
