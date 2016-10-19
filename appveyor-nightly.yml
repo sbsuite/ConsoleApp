@@ -45,10 +45,10 @@ nuget:
   account_feed: true
 
 test_script: 
-  - ps: ./packages/**/tools/report-coverage.ps1 -categoryFilter cat!=ReportingTest -buildConfiguration $env:CONFIGURATION
+  - ps: ./packages/**/tools/report-coverage.ps1 -categoryFilter cat!=ReportingTest
 
 after_test:
-  - ps: ./*/TestApp/bin/$env:CONFIGURATION/TestApp.exe these are arguments
+  - ps: ./*/TestApp/bin/$(configuration)/TestApp.exe these are arguments
 
 artifacts:
   - path: '**\bin\$(configuration)\*.msi'
