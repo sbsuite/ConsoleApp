@@ -33,7 +33,7 @@ nuget:
   account_feed: true
 
 test_script: 
-  - ps: ./packages/**/tools/report-coverage.ps1 cat!=ReportingTest
+  - ps: ./packages/**/tools/report-coverage.ps1 -testFilter cat!=ReportingTest
 
 after_test:
   cmd: dev\TestApp\bin\Release\TestApp.exe these are arguments
