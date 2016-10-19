@@ -48,7 +48,7 @@ test_script:
   - ps: ./packages/**/tools/report-coverage.ps1 -categoryFilter cat!=ReportingTest
 
 after_test:
-  - ps: ./*/TestApp/bin/$(configuration)/TestApp.exe these are arguments
+  - ps: ./*/TestApp/bin/*/TestApp.exe these are arguments
 
 artifacts:
   - path: '**\bin\$(configuration)\*.msi'
