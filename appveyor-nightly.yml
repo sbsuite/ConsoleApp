@@ -18,15 +18,15 @@ environment:
   COVERALLS_REPO_TOKEN:
     secure: v/xn8Q6QR9FsktGqr8V3oYpO88W2BXOIb/amH2c660IMGCZjw5qKJHCxHedX30vL
 
-install:
-- ps: >-
-    (new-object net.webclient).DownloadFile('https://ci.appveyor.com/api/buildjobs/tojql4tt0xu7orxa/artifacts/MikTex.2.9.2.9711.msi', 'C:\\MikTex.2.9.2.9711.msi')
-
-    Start-Process C:\Windows\System32\msiexec.exe -ArgumentList /i, C:\MikTex.2.9.2.9711.msi, /quiet, /qn, /norestart, /log, C:\install.log -Wait
-
-    cat C:\install.log
-
-    ls c:\
+#install:
+#- ps: >-
+#    (new-object net.webclient).DownloadFile('https://ci.appveyor.com/api/buildjobs/tojql4tt0xu7orxa/artifacts/MikTex.2.9.2.9711.msi', 'C:\\MikTex.2.9.2.9711.msi')
+#
+#    Start-Process C:\Windows\System32\msiexec.exe -ArgumentList /i, C:\MikTex.2.9.2.9711.msi, /quiet, /qn, /norestart, /log, C:\install.log -Wait
+#
+#    cat C:\install.log
+#
+#    ls c:\
 
 before_build:
   - nuget restore
