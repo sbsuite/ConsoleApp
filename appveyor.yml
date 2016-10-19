@@ -1,6 +1,12 @@
-configuration: Release
+configuration: Setup
 
-version: '0.4.{build}'
+version: '0.4.2.{build}'
+environment:
+  app_version: $(APPVEYOR_BUILD_VERSION)
+  setup_project_path: $(APPVEYOR_BUILD_FOLDER)\setup\ConsoleApp.Setup
+
+platform:
+  - x86
 
 assembly_info:
   patch: true
@@ -14,13 +20,22 @@ cache:
 
 before_build:
   - nuget restore
+  - ps: .\packages\**\tools\pre-setup.ps1
+
+after_build:
+  - ps: .\packages\**\tools\post-setup.ps1
 
 build:
   project: ConsoleApp.sln 
 
+after_test:
+  cmd: src\TestApp\bin\%CONFIGURATION%\TestApp.exe these are arguments
+
 artifacts:
-  - path: dev\GuiApp\bin\Release
+  - path: src\GuiApp\bin\$(configuration)
     name: MyApp
+
+  - path: '**\bin\$(configuration)\*.msi'
 
 nuget:
   account_feed: true
