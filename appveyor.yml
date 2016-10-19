@@ -1,9 +1,8 @@
-configuration: Setup
+configuration: Release
 
 version: '0.4.2.{build}'
 environment:
   app_version: $(APPVEYOR_BUILD_VERSION)
-  setup_project_path: $(APPVEYOR_BUILD_FOLDER)\setup\ConsoleApp.Setup
 
 platform:
   - x86
@@ -20,10 +19,6 @@ cache:
 
 before_build:
   - nuget restore
-  - ps: .\packages\**\tools\pre-setup.ps1
-
-after_build:
-  - ps: .\packages\**\tools\post-setup.ps1
 
 build:
   project: ConsoleApp.sln 

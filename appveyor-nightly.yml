@@ -1,4 +1,4 @@
-configuration: Release
+configuration: Setup
 
 version: '0.4.{build}'
 
@@ -13,6 +13,7 @@ assembly_info:
   assembly_informational_version: "{version}"
 
 environment:
+  SETUP_PRJECT_PATH: $(APPVEYOR_BUILD_FOLDER)\setup\ConsoleApp.Setup
   COVERALLS_REPO_TOKEN:
     secure: v/xn8Q6QR9FsktGqr8V3oYpO88W2BXOIb/amH2c660IMGCZjw5qKJHCxHedX30vL
 
@@ -26,8 +27,15 @@ install:
 
     ls c:\
 
+before_build:
+  - nuget restore
+  - ps: .\packages\**\tools\pre-setup.ps1
+
 build:
   project: ConsoleApp.sln 
+
+after_build:
+  - ps: .\packages\**\tools\post-setup.ps1
 
 cache:
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
@@ -41,6 +49,4 @@ test_script:
 after_test:
   cmd: dev\TestApp\bin\Release\TestApp.exe these are arguments
 
-before_build:
-  - nuget restore
 
