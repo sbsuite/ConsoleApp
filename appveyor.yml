@@ -20,7 +20,7 @@ cache:
 
 before_build:
   - nuget restore
-  - ps: .\packages\**\pre-setup.ps1
+  - ps: .\packages\**\tools\pre-setup.ps1
 
 after_test:
   cmd: src\TestApp\bin\%CONFIGURATION%\TestApp.exe these are arguments
