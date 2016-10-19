@@ -25,8 +25,6 @@ artifacts:
   - path: src\GuiApp\bin\$(configuration)
     name: MyApp
 
-  - path: '**\bin\$(configuration)\*.msi'
-
 nuget:
   account_feed: true
 
