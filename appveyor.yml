@@ -2,8 +2,8 @@ configuration: Setup
 
 version: '0.4.2.{build}'
 environment:
-  setup_project_name: ConsoleApp.Setup
   app_version: $(APPVEYOR_BUILD_VERSION)
+  setup_project_path: $(APPVEYOR_BUILD_FOLDER)\setup\Console.Setup
 
 platform:
   - x86
@@ -20,7 +20,10 @@ cache:
 
 before_build:
   - nuget restore
-  - ps: .\packages\**\tools\pre-setup.ps1
+  - ps: pre-setup.ps1
+
+after_build:
+  - ps: .\packages\**\tools\post-setup.ps1
 
 after_test:
   cmd: src\TestApp\bin\%CONFIGURATION%\TestApp.exe these are arguments
