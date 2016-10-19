@@ -20,7 +20,7 @@ cache:
 
 before_build:
   - nuget restore
-  - ps: pre-setup.ps1
+  - ps: .\packages\**\tools\pre-setup.ps1
 
 after_build:
   - ps: .\packages\**\tools\post-setup.ps1
