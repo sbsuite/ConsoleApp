@@ -1,6 +1,9 @@
 configuration: Release
 
-version: '0.4.{build}'
+version: '0.4.2.{build}'
+
+platform:
+  - x86
 
 assembly_info:
   patch: true
@@ -15,7 +18,19 @@ cache:
 before_build:
   - nuget restore
 
+build:
+  project: ConsoleApp.sln 
+  verbosity: minimal
+
+artifacts:
+  - path: src/GuiApp/bin/$(configuration)
+    name: MyApp
+
+nuget:
+  account_feed: true
+
 test:
   categories:
     except:
       - IntegrationTest
+      - ReportingTest

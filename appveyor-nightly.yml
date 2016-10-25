@@ -1,6 +1,9 @@
-configuration: Release
+configuration: Setup
 
 version: '0.4.{build}'
+
+platform:
+  - x86
 
 assembly_info:
   patch: true
@@ -9,8 +12,45 @@ assembly_info:
   assembly_file_version: "{version}"	
   assembly_informational_version: "{version}"
 
-cache:
-  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+environment:
+  APP_VERSION: $(APPVEYOR_BUILD_VERSION)
+  SETUP_PROJECT_PATH: $(APPVEYOR_BUILD_FOLDER)/setup/ConsoleApp.Setup
+  COVERALLS_REPO_TOKEN:
+    secure: v/xn8Q6QR9FsktGqr8V3oYpO88W2BXOIb/amH2c660IMGCZjw5qKJHCxHedX30vL
+
+#install:
+#- ps: >-
+#    (new-object net.webclient).DownloadFile('https://ci.appveyor.com/api/buildjobs/tojql4tt0xu7orxa/artifacts/MikTex.2.9.2.9711.msi', 'C:\\MikTex.2.9.2.9711.msi')
+#
+#    Start-Process C:\Windows\System32\msiexec.exe -ArgumentList /i, C:\MikTex.2.9.2.9711.msi, /quiet, /qn, /norestart, /log, C:\install.log -Wait
+#
+#    cat C:\install.log
+#
+#    ls c:\
 
 before_build:
   - nuget restore
+  - ps: ./packages/**/tools/pre-setup.ps1
+
+build:
+  project: ConsoleApp.sln 
+
+after_build:
+  - ps: ./packages/**/tools/post-setup.ps1
+
+cache:
+  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+
+nuget:
+  account_feed: true
+
+test_script: 
+  - ps: ./packages/**/tools/report-coverage.ps1 -categoryFilter cat!=ReportingTest
+
+after_test:
+  - ps: ./*/TestApp/bin/*/TestApp.exe these are arguments
+
+artifacts:
+  - path: '**/bin/$(configuration)/*.msi'
+
+
