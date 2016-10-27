@@ -95,8 +95,8 @@
       <HintPath>..\..\packages\SBSuite.TestPackages.Package2.1.1.5.28\lib\net452\node2.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="node3.1, Version=1.2.150.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SBSuite.TestPackages.Package3.1.1.2.150\lib\net452\node3.1.dll</HintPath>
+    <Reference Include="node3.1, Version=1.2.153.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SBSuite.TestPackages.Package3.1.1.2.153\lib\net452\node3.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -115,9 +115,32 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\ConsoleApp.exe.config" />
+    <None Include="bin\Debug\ConsoleApp.vshost.exe.config" />
+    <None Include="bin\Debug\ConsoleApp.vshost.exe.manifest" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ConsoleApp.exe" />
+    <Content Include="bin\Debug\ConsoleApp.pdb" />
+    <Content Include="bin\Debug\ConsoleApp.vshost.exe" />
+    <Content Include="bin\Debug\DevExpress.Data.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Printing.v15.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Utils.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraCharts.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraCharts.v15.1.UI.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraEditors.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraGrid.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraLayout.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraPrinting.v15.1.dll" />
+    <Content Include="bin\Debug\node1.1.dll" />
+    <Content Include="bin\Debug\node1.2.dll" />
+    <Content Include="bin\Debug\node1.3.dll" />
+    <Content Include="bin\Debug\node2.1.dll" />
+    <Content Include="bin\Debug\node3.1.dll" />
+    <Content Include="bin\native\NativeLibrary.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
