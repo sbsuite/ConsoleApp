@@ -17,6 +17,7 @@ cache:
 
 before_build:
   - nuget restore
+  - ruby myscript.rb
 
 build:
   project: ConsoleApp.sln 
