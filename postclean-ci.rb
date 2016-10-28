@@ -6,16 +6,9 @@ def configuration
   ENV['CONFIGURATION'] || "Debug"
 end
 
-puts configuration
-
 target_dir = File.join(".", "src", "ConsoleApp", "bin", configuration);
-
-puts package_dir
-puts target_dir
 
 copy_depdencies package_dir,  target_dir do
   copy_native_dll
+  copy_file 'native', 'dll'
 end
-
-puts "done"
-
