@@ -7,8 +7,8 @@ def configuration
 end
 
 target_dir = File.join(".", "src", "ConsoleApp", "bin", configuration);
+test_dir = File.join(".", "tests", "ConsoleApp.Tests", "bin", configuration);
 
-copy_depdencies package_dir,  target_dir do
+copy_depdencies package_dir,  [target_dir, test_dir] do
   copy_native_dll
-  copy_file 'native', 'dll'
 end
