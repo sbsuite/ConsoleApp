@@ -17,7 +17,7 @@ cache:
 
 before_build:
   - nuget restore
-#  - ruby myscript.rb
+  - ruby postclean-ci.rb
 #  - ps: ruby ./packages/**/tools/ruby-test.rb
 
 build:
