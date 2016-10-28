@@ -17,8 +17,8 @@ cache:
 
 before_build:
   - nuget restore
-  - ruby myscript.rb
-  - ps: ruby ./packages/**/tools/ruby-test.rb
+#  - ruby myscript.rb
+#  - ps: ruby ./packages/**/tools/ruby-test.rb
 
 build:
   project: ConsoleApp.sln 
