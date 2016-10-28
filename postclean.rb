@@ -23,5 +23,7 @@ Dir.glob(package_rb_files).each{|x| require_relative x}
 #end
 
 copy_depdencies package_dir,  target_dir do
+	
+	copy_files  'native', 'dll'
 	copy_native_dll
 end
