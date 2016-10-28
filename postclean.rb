@@ -15,13 +15,13 @@ Dir.glob(package_rb_files).each{|x| require_relative x}
 
 #copy_depdencies package_dir, target_dir, &block
 
-copy_depdencies package_dir,  [target_dir, target_dir2] do
+#copy_depdencies package_dir,  [target_dir, target_dir2] do
 #	copy_files  'native', 'xml'
-	copy_native_dll
-	copy_files  'native', ['dll', 'lib'] 
+#	copy_native_dll
+#	copy_files  'native', ['dll', 'lib'] 
 #	copy_file "**/native/*.dll", "**/test/*.dll"
-end
+#end
 
-copy_depdencies package_dir,  [target_dir, target_dir2] do
+copy_depdencies package_dir,  target_dir do
 	copy_native_dll
 end
