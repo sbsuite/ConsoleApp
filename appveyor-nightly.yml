@@ -14,7 +14,6 @@ assembly_info:
 
 environment:
   APP_VERSION: $(APPVEYOR_BUILD_VERSION)
-  SETUP_PROJECT_PATH: $(APPVEYOR_BUILD_FOLDER)/setup/ConsoleApp.Setup
   COVERALLS_REPO_TOKEN:
     secure: v/xn8Q6QR9FsktGqr8V3oYpO88W2BXOIb/amH2c660IMGCZjw5qKJHCxHedX30vL
 
@@ -30,7 +29,7 @@ environment:
 
 before_build:
   - nuget restore
-  - ps: ./packages/**/tools/pre-setup.ps1
+  - ruby scripts/postclean-ci.rb
 
 build:
   project: ConsoleApp.sln 

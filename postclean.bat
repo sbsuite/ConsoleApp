@@ -1,3 +1,3 @@
 @echo off
 
-ruby postclean.rb
+ruby scripts/postclean.rb

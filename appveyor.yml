@@ -17,7 +17,7 @@ cache:
 
 before_build:
   - nuget restore
-  - ruby postclean-ci.rb
+  - ruby scripts/postclean-ci.rb
 #  - ps: ruby ./packages/**/tools/ruby-test.rb
 
 build:

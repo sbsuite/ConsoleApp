@@ -1,10 +1,7 @@
-package_dir = File.join(".", "packages");
-package_rb_files = File.join(package_dir, "**", "*.rb")
+require_relative 'include-packages'
 
-target_dir = File.join(".", "src", "ConsoleApp", "bin", "Debug");
-target_dir2 = File.join(".", "src", "ConsoleApp", "bin", "Debug", "toto");
+target_dir = File.join(solution_dir, "src", "ConsoleApp", "bin", "Debug");
 
-Dir.glob(package_rb_files).each{|x| require_relative x}
 
 
 #block = Proc.new {
@@ -22,8 +19,6 @@ Dir.glob(package_rb_files).each{|x| require_relative x}
 #	copy_file "**/native/*.dll", "**/test/*.dll"
 #end
 
-copy_depdencies package_dir,  target_dir do
-	
-	copy_files  'native', 'dll'
+copy_depdencies packages_dir,  target_dir do
 	copy_native_dll
 end
