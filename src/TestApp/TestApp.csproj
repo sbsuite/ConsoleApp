@@ -59,7 +59,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="bin\Debug\TestApp.exe.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\TestApp.exe" />
