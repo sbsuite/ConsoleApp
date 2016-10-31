@@ -20,5 +20,5 @@ target_dir = File.join(solution_dir, "src", "ConsoleApp", "bin", "Debug");
 #end
 
 copy_depdencies packages_dir,  target_dir do
-	copy_native_dll
+	copy_file  '**/native/**/x86/Debug/*.dll'
 end
