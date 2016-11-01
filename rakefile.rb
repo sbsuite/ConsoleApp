@@ -1,9 +1,9 @@
 task :default => [:create_setup]
 
-task :create_setup, [:product_version] => [:load_dependencies] do |t, args|
+task :create_setup, [:product_version, :configuration] => [:load_dependencies] do |t, args|
 	solution_dir = File.dirname(__FILE__)
 	setup_dir = File.join(solution_dir, 'setup')
-	src_dir = File.join(solution_dir, 'src', 'ConsoleApp', 'bin', 'Release')
+	src_dir = File.join(solution_dir, 'src', 'ConsoleApp', 'bin', args.configuration)
 	deploy_dir = File.join(setup_dir, 'deploy');
 	product_name = 'ConsoleApp'
 	product_version = args.product_version
