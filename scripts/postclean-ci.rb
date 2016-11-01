@@ -13,7 +13,7 @@ copy_depdencies packages_dir,  [target_dir, test_dir] do
 end
 
 #Copy wix fragment to files
-fragments_dir = File.join(solution_dir, "ConsoleApp.Setup", "fragments");
+fragments_dir = File.join(solution_dir, "setup", "fragments");
 copy_depdencies packages_dir,  fragments_dir do
 	copy_wix_wxs
 end

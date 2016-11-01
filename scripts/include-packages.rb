@@ -12,4 +12,4 @@ end
 
 packages_rb_files = File.join('.','packages',  'SBSuite.build-scripts*','**', '*.rb')
 
-Dir.glob(packages_rb_files).each{|x|  require_relative x}
+Dir.glob(packages_rb_files).each{|x|  require x}
