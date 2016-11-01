@@ -1,6 +1,6 @@
 task :default => [:create_setup]
 
-task :create_setup, [:product_version] => [:load_dependencies] do
+task :create_setup, [:product_version] => [:load_dependencies] do |t, args|
 	solution_dir = File.dirname(__FILE__)
 	setup_dir = File.join(solution_dir, 'setup')
 	src_dir = File.join(solution_dir, 'src', 'ConsoleApp', 'bin', 'Release')
@@ -13,7 +13,7 @@ task :create_setup, [:product_version] => [:load_dependencies] do
 		:setup_dir => setup_dir,  
 		:deploy_dir => deploy_dir, 
 		:product_name => product_name, 
-		:product_version	=> product_version))
+		:product_version => product_version))
 end
 
 desc "Ensure that all required files are loaded"
