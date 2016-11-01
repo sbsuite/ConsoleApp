@@ -1,4 +1,3 @@
-task :default => [:create_setup]
 
 task :create_setup, [:product_version, :configuration] => [:load_dependencies] do |t, args|
 	solution_dir = File.dirname(__FILE__)
@@ -8,7 +7,7 @@ task :create_setup, [:product_version, :configuration] => [:load_dependencies] d
 	product_name = 'ConsoleApp'
 	product_version = args.product_version
 
-	Rake::Task['setup:all'].execute(OpenStruct.new(
+	Rake::Task['setup:create'].execute(OpenStruct.new(
 		:src_dir => src_dir, 
 		:setup_dir => setup_dir,  
 		:deploy_dir => deploy_dir, 
