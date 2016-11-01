@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="E17484DE-0CB3-43D3-98F4-B6A54E08B437" Name="ConsoleApp.Setup" Language="1033" Version="$(env.APP_VERSION)" Manufacturer="Design2code" UpgradeCode="8ccf01db-2e78-4675-8c42-7af62ad6e575">
+	<Product Id="PRODUCT_ID" Name="PRODUCT_FULL_NAME" Language="1033" Version="PRODUCT_VERSION" Manufacturer="Design2code" UpgradeCode="8ccf01db-2e78-4675-8c42-7af62ad6e575">
     <Package InstallerVersion="200" Compressed="yes" InstallPrivileges="elevated" />
     <Condition Message='For a correct installation of the software, administrator rights are necessary. You do not have these rights. Please contact your IT-administrator to carry out the installation'>Privileged</Condition>
 
@@ -10,7 +10,7 @@
 
 		<Feature Id="ProductFeature" Title="ConsoleApp.Setup" Level="1" Absent="disallow" AllowAdvertise="no">
 			<ComponentGroupRef Id="ProductComponents" />
-      <ComponentGroupRef Id="node1.2" />
+      <!-- <ComponentGroupRef Id="node1.2" /> -->
 		</Feature>
    
     <!-- UISection-->
@@ -28,7 +28,7 @@
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLDIR" Name="ConsoleApp.Setup" />
+				<Directory Id="INSTALLDIR" Name="PRODUCT_FULL_NAME" />
 			</Directory>
 		</Directory>
 	</Fragment>
@@ -36,16 +36,16 @@
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLDIR">		
 		  <Component Id='ConsoleApp' Guid='3A044936-F91A-47AE-97E6-698ADF0C0E6D'>
-		    <File Source="$(var.ConsoleApp.TargetPath)" KeyPath='yes' />
+		    <File Source="$(var.DeployDir)/ConsoleApp.exe" KeyPath='yes' />
 		  </Component>
 
-      <Component Id='GuiApp' Guid='DBF24780-CD46-4A90-984B-58B2A37245BD'>
-        <File Source="$(var.GuiApp.TargetPath)" KeyPath='yes' />
+<!--       <Component Id='GuiApp' Guid='DBF24780-CD46-4A90-984B-58B2A37245BD'>
+        <File Source="$(var.DeployDir)/GuiApp.exe" KeyPath='yes' />
       </Component>
 
       <Component Id='TestApp' Guid='A6CEFA1B-1D73-4F04-90A2-022E17498B55'>
-        <File Source="$(var.TestApp.TargetPath)" KeyPath='yes' />
+        <File Source="$(var.DeployDir)/TestApp.exe" KeyPath='yes' />
       </Component>
-		</ComponentGroup>
+ -->		</ComponentGroup>
 	</Fragment>
 </Wix>

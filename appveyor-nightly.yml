@@ -1,4 +1,4 @@
-configuration: Setup
+configuration: Release
 
 version: '0.4.{build}'
 
@@ -13,7 +13,6 @@ assembly_info:
   assembly_informational_version: "{version}"
 
 environment:
-  APP_VERSION: $(APPVEYOR_BUILD_VERSION)
   COVERALLS_REPO_TOKEN:
     secure: v/xn8Q6QR9FsktGqr8V3oYpO88W2BXOIb/amH2c660IMGCZjw5qKJHCxHedX30vL
 
@@ -35,7 +34,7 @@ build:
   project: ConsoleApp.sln 
 
 after_build:
-  - ps: ./packages/**/tools/post-setup.ps1
+  - rake setup/rakefile 
 
 cache:
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
