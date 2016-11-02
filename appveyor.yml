@@ -24,6 +24,8 @@ cache:
 
 before_build:
   - nuget restore
+  - ruby scripts/postclean-ci.rb
+#  - ps: ruby ./packages/**/tools/ruby-test.rb
 
 build:
   project: ConsoleApp.sln 

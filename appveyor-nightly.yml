@@ -1,4 +1,4 @@
-configuration: Setup
+configuration: Release
 
 version: '0.4.{build}'
 
@@ -13,8 +13,6 @@ assembly_info:
   assembly_informational_version: "{version}"
 
 environment:
-  APP_VERSION: $(APPVEYOR_BUILD_VERSION)
-  SETUP_PROJECT_PATH: $(APPVEYOR_BUILD_FOLDER)/setup/ConsoleApp.Setup
   COVERALLS_REPO_TOKEN:
     secure: v/xn8Q6QR9FsktGqr8V3oYpO88W2BXOIb/amH2c660IMGCZjw5qKJHCxHedX30vL
 
@@ -30,13 +28,13 @@ environment:
 
 before_build:
   - nuget restore
-  - ps: ./packages/**/tools/pre-setup.ps1
+  - ruby scripts/postclean-ci.rb
 
 build:
   project: ConsoleApp.sln 
 
 after_build:
-  - ps: ./packages/**/tools/post-setup.ps1
+  - rake "create_setup[%APPVEYOR_BUILD_VERSION%, %CONFIGURATION%]"
 
 cache:
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
@@ -51,6 +49,6 @@ after_test:
   - ps: ./*/TestApp/bin/*/TestApp.exe these are arguments
 
 artifacts:
-  - path: '**/bin/$(configuration)/*.msi'
+  - path: 'setup/**/*.msi'
 
 
