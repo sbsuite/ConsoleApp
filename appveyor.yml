@@ -8,9 +8,8 @@ platform:
 
 notifications:
   - provider: Slack
-    auth_token:
-      secure: WjVglexX0B2y/KDQUw7UyKz76sCKaXFvQy/MZRBjOWvaQk0ScONJ1f6djB5ggtIQ
-    channel: '#builds'
+    incoming_webhook:
+    secure: Cj9sJjs1yQRd5bR3A8XzwPhGEZ5fm9BXfEGxcSeekCi0FuThcjkF2norXKyQyVtba4PyJB1grvfr8F6sUfLJuNs1OMncoP9VfrK5bwDW/Ok=
 
 assembly_info:
   patch: true
