@@ -9,7 +9,7 @@ platform:
 notifications:
   - provider: Slack
     incoming_webhook:
-    secure: Cj9sJjs1yQRd5bR3A8XzwPhGEZ5fm9BXfEGxcSeekCi0FuThcjkF2norXKyQyVtba4PyJB1grvfr8F6sUfLJuNs1OMncoP9VfrK5bwDW/Ok=
+      secure: Cj9sJjs1yQRd5bR3A8XzwPhGEZ5fm9BXfEGxcSeekCi0FuThcjkF2norXKyQyVtba4PyJB1grvfr8F6sUfLJuNs1OMncoP9VfrK5bwDW/Ok=
 
 assembly_info:
   patch: true
