@@ -26,6 +26,11 @@ environment:
 #
 #    ls c:\
 
+notifications:
+  - provider: Slack
+    incoming_webhook:
+      secure: Cj9sJjs1yQRd5bR3A8XzwPhGEZ5fm9BXfEGxcSeekCiA/eeM2qa6d2eYr6gg95SaVsOKFkUnbCc9uuXTTH6bSOUcUXpcpJL0+pWXYKwpLjo=
+
 before_build:
   - nuget restore
   - ruby scripts/postclean-ci.rb
