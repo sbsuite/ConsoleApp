@@ -56,4 +56,6 @@ after_test:
 artifacts:
   - path: 'setup/**/*.msi'
 
+on_failure: 
+  - ps: Get-ChildItem .\setup\**\*.msi | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
