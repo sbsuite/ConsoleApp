@@ -18,14 +18,14 @@ namespace Tests.ConsoleApp
       [Category("IntegrationTest")]
       public void this_is_an_integrations_test()
       {
-         Assert.IsFalse(true);
+         Assert.IsTrue(true);
       }
 
       [Test]
       public void this_is_a_standard_test()
       {
          var testClass = new TestClass();
-         Assert.IsTrue(testClass.True());
+         Assert.IsFalse(testClass.True());
       }
    }
 }
