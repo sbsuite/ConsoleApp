@@ -25,7 +25,7 @@ namespace Tests.ConsoleApp
       public void this_is_a_standard_test()
       {
          var testClass = new TestClass();
-         Assert.IsTrue(testClass.True());
+         Assert.IsFalse(testClass.True());
       }
    }
 }
