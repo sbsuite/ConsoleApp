@@ -18,7 +18,7 @@ namespace Tests.ConsoleApp
       [Category("IntegrationTest")]
       public void this_is_an_integrations_test()
       {
-         Assert.IsTrue(true);
+         Assert.IsFalse(true);
       }
 
       [Test]
