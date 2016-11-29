@@ -53,9 +53,6 @@ test_script:
 after_test:
   - ps: ./*/TestApp/bin/*/TestApp.exe these are arguments
 
-artifacts:
-  - path: 'setup/**/*.msi'
-
-on_failure: 
+on_finish: 
   - ps: Get-ChildItem .\setup\**\*.msi | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
