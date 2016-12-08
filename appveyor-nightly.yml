@@ -40,7 +40,7 @@ build:
 
 after_build:
   - rake "create_setup[%APPVEYOR_BUILD_VERSION%, %CONFIGURATION%]"
-  - 7z a setup.zip %APPVEYOR_BUILD_FOLDER%\setup\**\*.msi
+  - 7z a setup.zip %APPVEYOR_BUILD_FOLDER%\setup\deploy\*.msi
 
 cache:
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
