@@ -55,5 +55,8 @@ after_test:
   - ps: ./*/TestApp/bin/*/TestApp.exe these are arguments
 
 on_finish: 
-  - ps: Get-ChildItem .\setup.zip | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+  - ps: Get-ChildItem ./**/setup.zip | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
+artifacts:
+  - path: setup.zip
+    name: setup
