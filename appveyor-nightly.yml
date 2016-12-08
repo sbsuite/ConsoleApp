@@ -1,4 +1,4 @@
-configuration: Setup
+configuration: Release
 
 version: '0.4.{build}'
 
@@ -13,8 +13,6 @@ assembly_info:
   assembly_informational_version: "{version}"
 
 environment:
-  APP_VERSION: $(APPVEYOR_BUILD_VERSION)
-  SETUP_PROJECT_PATH: $(APPVEYOR_BUILD_FOLDER)/setup/ConsoleApp.Setup
   COVERALLS_REPO_TOKEN:
     secure: v/xn8Q6QR9FsktGqr8V3oYpO88W2BXOIb/amH2c660IMGCZjw5qKJHCxHedX30vL
 
@@ -28,15 +26,20 @@ environment:
 #
 #    ls c:\
 
+notifications:
+  - provider: Slack
+    incoming_webhook:
+      secure: Cj9sJjs1yQRd5bR3A8XzwPhGEZ5fm9BXfEGxcSeekCiA/eeM2qa6d2eYr6gg95SaVsOKFkUnbCc9uuXTTH6bSOUcUXpcpJL0+pWXYKwpLjo=
+
 before_build:
   - nuget restore
-  - ps: ./packages/**/tools/pre-setup.ps1
+  - ruby scripts/postclean-ci.rb
 
 build:
   project: ConsoleApp.sln 
 
 after_build:
-  - ps: ./packages/**/tools/post-setup.ps1
+  - rake "create_setup[%APPVEYOR_BUILD_VERSION%, %CONFIGURATION%]"
 
 cache:
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
@@ -50,7 +53,6 @@ test_script:
 after_test:
   - ps: ./*/TestApp/bin/*/TestApp.exe these are arguments
 
-artifacts:
-  - path: '**/bin/$(configuration)/*.msi'
-
+on_finish: 
+  - ps: Get-ChildItem .\setup\**\*.msi | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 

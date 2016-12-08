@@ -42,6 +42,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v15.1, Version=15.1.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SBSuite.DevExpress.1.0.3\lib\net452\DevExpress.Data.v15.1.dll</HintPath>
@@ -83,20 +86,24 @@
       <HintPath>..\..\packages\SBSuite.TestPackages.Package1.1.1.1.8\lib\net452\node1.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="node1.2, Version=1.2.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SBSuite.TestPackages.Package1.2.1.2.9\lib\net452\node1.2.dll</HintPath>
+    <Reference Include="node1.2, Version=1.2.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\SBSuite.TestPackages.Package1.2.1.2.18\lib\net452\node1.2.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="node1.3, Version=1.2.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SBSuite.TestPackages.Package1.3.1.2.9\lib\net452\node1.3.dll</HintPath>
+    <Reference Include="node1.3, Version=1.2.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\SBSuite.TestPackages.Package1.3.1.2.18\lib\net452\node1.3.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="node2.1, Version=1.5.20.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SBSuite.TestPackages.Package2.1.1.5.20\lib\net452\node2.1.dll</HintPath>
+    <Reference Include="node2.1, Version=1.5.30.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\SBSuite.TestPackages.Package2.1.1.5.30\lib\net452\node2.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="node3.1, Version=1.2.146.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\SBSuite.TestPackages.Package3.1.1.2.146\lib\net452\node3.1.dll</HintPath>
+    <Reference Include="node3.1, Version=1.2.157.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\SBSuite.TestPackages.Package3.1.1.2.157\lib\net452\node3.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -115,16 +122,47 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\ConsoleApp.exe.config" />
+    <None Include="bin\Debug\ConsoleApp.vshost.exe.config" />
+    <None Include="bin\Debug\ConsoleApp.vshost.exe.manifest" />
+    <None Include="bin\native\x64\Debug\NativeLibrary.lib" />
+    <None Include="bin\native\x64\Release\NativeLibrary.lib" />
+    <None Include="bin\native\x86\Debug\NativeLibrary.lib" />
+    <None Include="bin\native\x86\Release\NativeLibrary.lib" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="NativeLibrary.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="bin\Debug\ConsoleApp.exe" />
+    <Content Include="bin\Debug\ConsoleApp.pdb" />
+    <Content Include="bin\Debug\ConsoleApp.vshost.exe" />
+    <Content Include="bin\Debug\DevExpress.Data.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.Printing.v15.1.Core.dll" />
+    <Content Include="bin\Debug\DevExpress.Utils.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraCharts.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraCharts.v15.1.UI.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraEditors.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraGrid.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraLayout.v15.1.dll" />
+    <Content Include="bin\Debug\DevExpress.XtraPrinting.v15.1.dll" />
+    <Content Include="bin\Debug\node1.1.dll" />
+    <Content Include="bin\Debug\node1.2.dll" />
+    <Content Include="bin\Debug\node1.3.dll" />
+    <Content Include="bin\Debug\node2.1.dll" />
+    <Content Include="bin\Debug\node3.1.dll" />
+    <Content Include="bin\native\Include\NativeLibrary.h" />
+    <Content Include="bin\native\NativeLibrary.dll" />
+    <Content Include="bin\native\x64\Debug\NativeLibrary.dll" />
+    <Content Include="bin\native\x64\Release\NativeLibrary.dll" />
+    <Content Include="bin\native\x86\Debug\NativeLibrary.dll" />
+    <Content Include="bin\native\x86\Release\NativeLibrary.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
