@@ -56,7 +56,3 @@ after_test:
 
 on_finish: 
   - ps: Get-ChildItem ./**/setup.zip | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
-
-artifacts:
-  - path: setup.zip
-    name: setup
