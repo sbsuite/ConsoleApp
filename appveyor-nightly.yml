@@ -53,8 +53,10 @@ test_script:
 
 after_test:
   - ps: ./*/TestApp/bin/*/TestApp.exe these are arguments
-  - ps: Test-Path -Path "HKEY_LOCAL_MACHINE\SOFTWARE\BTS Products\MikTEX"
-  - ps: Test-Path -Path "HKEY_LOCAL_MACHINE\SOFTWARE\BTS Products\MikTEX\InstallDir"
+  - ps: Test-Path -Path "HKEY_LOCAL_MACHINE:\SOFTWARE\BTS Products\MikTEX"
+  - ps: Test-Path -Path "HKLM:\SOFTWARE\BTS Products\MikTEX"
+  - ps: Test-Path -Path "HKEY_LOCAL_MACHINE:\SOFTWARE\BTS Products\MikTEX\InstallDir"
+  - ps: Test-Path -Path "HKLM:\SOFTWARE\BTS Products\MikTEX\InstallDir"
 
 on_finish: 
   - ps: Get-ChildItem setup.zip | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
