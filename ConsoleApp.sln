@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "src\ConsoleAp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FBBE4998-E867-4737-8114-6AE4AB310EEE}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor-bug.yml = appveyor-bug.yml
 		appveyor-nightly.yml = appveyor-nightly.yml
 		appveyor.yml = appveyor.yml
 		scripts\include-packages.rb = scripts\include-packages.rb
@@ -61,10 +62,6 @@ Global
 		{CB7AB91B-6509-4FC0-9730-A55F50F19403}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CB7AB91B-6509-4FC0-9730-A55F50F19403}.Release|x86.ActiveCfg = Release|Any CPU
 		{CB7AB91B-6509-4FC0-9730-A55F50F19403}.Release|x86.Build.0 = Release|Any CPU
-		{6D8CA4EB-3FBE-431E-9D05-D2F311B43BF1}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{6D8CA4EB-3FBE-431E-9D05-D2F311B43BF1}.Debug|x86.ActiveCfg = Debug|x86
-		{6D8CA4EB-3FBE-431E-9D05-D2F311B43BF1}.Release|Any CPU.ActiveCfg = Release|x86
-		{6D8CA4EB-3FBE-431E-9D05-D2F311B43BF1}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
