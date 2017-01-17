@@ -22,9 +22,9 @@ install:
 
     Start-Process C:\Windows\System32\msiexec.exe -ArgumentList /i, C:\MikTex.2.9.2.9711.msi, /quiet, /qn, /norestart, /log, C:\install.log -Wait
 
-    cat C:\install.log
+#    cat C:\install.log
 
-    ls c:\
+ #   ls c:\
 
 notifications:
   - provider: Slack
@@ -53,6 +53,8 @@ test_script:
 
 after_test:
   - ps: ./*/TestApp/bin/*/TestApp.exe these are arguments
+  - ps: Test-Path -Path "HKEY_LOCAL_MACHINE\SOFTWARE\BTS Products\MikTEX"
+  - ps: Test-Path -Path "HKEY_LOCAL_MACHINE\SOFTWARE\BTS Products\MikTEX\InstallDir"
 
 on_finish: 
   - ps: Get-ChildItem setup.zip | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
