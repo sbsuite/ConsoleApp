@@ -31,7 +31,9 @@ build:
 after_test:
   - ps: ./*/TestApp/bin/*/TestApp.exe these are arguments
   - ps: Test-Path -Path "HKEY_LOCAL_MACHINE:\SOFTWARE\BTS Products\MikTEX"
+  - ps: Test-Path -Path "HKEY_LOCAL_MACHINE:\SOFTWARE\BTS Products\MikTEX\InstallDir"
   - ps: Test-Path -Path "HKLM:\SOFTWARE\BTS Products\MikTEX"
+  - ps: Test-Path -Path "HKLM:\SOFTWARE\BTS Products\MikTEX\InstallDir"
 
 nuget:
   account_feed: true
