@@ -34,12 +34,12 @@ namespace TestApp
             {
                 Console.WriteLine($"A command line arg {arg}");
             }
-           return 0;
-//            Console.WriteLine($"MikText is installed: {MikTEXPortablePath}");
-//
-//            var returnCode =  runCompiler(Environment.CurrentDirectory).Result;
-//
-//            return returnCode;
+//           return 0;
+            Console.WriteLine($"MikText is installed: {MikTEXPortablePath}");
+
+            var returnCode =  runCompiler(Environment.CurrentDirectory).Result;
+
+            return returnCode;
         }
 
         private static Task<int> runCompiler(string workingDirectory)
