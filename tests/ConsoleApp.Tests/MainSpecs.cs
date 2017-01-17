@@ -8,7 +8,6 @@ namespace Tests.ConsoleApp
    [TestFixture]
    public class MainSpecs
    {
-
       [Test]
       [Category("ReportingTest")]
       public void this_is_a_reporting_test()
@@ -39,35 +38,20 @@ namespace Tests.ConsoleApp
       }
 
       private const string _mikTEXRegistryPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\BTS Products\MikTEX";
+
       public static string MikTEXPortablePath
       {
          get
          {
             try
             {
-               var path = (string)Registry.GetValue(_mikTEXRegistryPath, "InstallDir", null);
-               if (string.IsNullOrEmpty(path))
-                  throw new MikTexInstallationException();
-               return path;
-
+               return (string) Registry.GetValue(_mikTEXRegistryPath, "InstallDir", null);
             }
             catch (Exception e)
             {
-               throw new MikTexInstallationException(e);
+               return null;
             }
          }
       }
-      public class MikTexInstallationException : Exception
-      {
-         public MikTexInstallationException()
-         {
-         }
-
-         public MikTexInstallationException(Exception exception)
-         {
-
-         }
-      }
-
    }
 }
