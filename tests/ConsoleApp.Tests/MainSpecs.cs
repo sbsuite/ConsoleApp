@@ -1,4 +1,6 @@
-﻿using ConsoleApp;
+﻿using System;
+using ConsoleApp;
+using Microsoft.Win32;
 using NUnit.Framework;
 
 namespace Tests.ConsoleApp
@@ -27,5 +29,45 @@ namespace Tests.ConsoleApp
          var testClass = new TestClass();
          Assert.IsTrue(testClass.True());
       }
+
+      [Test]
+      public void this_is_the_path_of_the_install()
+      {
+         var path = MikTEXPortablePath;
+         Console.WriteLine($"MikText is installed: {path}");
+         Assert.IsFalse(string.IsNullOrEmpty(path));
+      }
+
+      private const string _mikTEXRegistryPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\BTS Products\MikTEX";
+      public static string MikTEXPortablePath
+      {
+         get
+         {
+            try
+            {
+               var path = (string)Registry.GetValue(_mikTEXRegistryPath, "InstallDir", null);
+               if (string.IsNullOrEmpty(path))
+                  throw new MikTexInstallationException();
+               return path;
+
+            }
+            catch (Exception e)
+            {
+               throw new MikTexInstallationException(e);
+            }
+         }
+      }
+      public class MikTexInstallationException : Exception
+      {
+         public MikTexInstallationException()
+         {
+         }
+
+         public MikTexInstallationException(Exception exception)
+         {
+
+         }
+      }
+
    }
 }
