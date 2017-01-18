@@ -32,7 +32,9 @@ namespace TestApp
 //            Console.WriteLine($"A command line arg {arg}");
 //         }
 //           return 0;
-         Console.WriteLine($"MikText is installed: {MikTEXPortablePath}");
+         Console.WriteLine($"Reg: MikText is installed: {MikTEXPortablePath}");
+
+         Console.WriteLine($"ENV: MikText is installed: {Environment.GetEnvironmentVariable("MIK_TEX_INSTALL_DIR")}");
 
          var returnCode = runCompiler(Environment.CurrentDirectory).Result;
 

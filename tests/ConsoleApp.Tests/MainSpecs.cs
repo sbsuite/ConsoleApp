@@ -31,10 +31,19 @@ namespace Tests.ConsoleApp
 
       [Test]
       [Category("Bug")]
-      public void this_is_the_path_of_the_install()
+      public void this_is_the_path_of_the_install_read_from_registry()
       {
          var path = MikTEXPortablePath;
-         Console.WriteLine($"MikText is installed: {path}");
+         Console.WriteLine($"Registry: MikText is installed: {path}");
+         Assert.IsFalse(string.IsNullOrEmpty(path));
+      }
+
+      [Test]
+      [Category("Bug")]
+      public void this_is_the_path_of_the_install_read_from_environment()
+      {
+         var path = Environment.GetEnvironmentVariable("MIK_TEX_INSTALL_DIR");
+         Console.WriteLine($"ENV: MikText is installed: {path}");
          Assert.IsFalse(string.IsNullOrEmpty(path));
       }
 
