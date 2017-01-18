@@ -41,7 +41,7 @@ after_test:
 nuget:
   account_feed: true
 
-test:
-  categories:
-    except:
-      - Bug
+#test:
+#  categories:
+#    except:
+#      - Bug
