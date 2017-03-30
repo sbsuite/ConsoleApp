@@ -4,13 +4,6 @@ version: '0.4.2.{build}'
 
 platform:
   - x86
-
-
-notifications:
-  - provider: Slack
-    incoming_webhook:
-      secure: Cj9sJjs1yQRd5bR3A8XzwPhGEZ5fm9BXfEGxcSeekCi0FuThcjkF2norXKyQyVtba4PyJB1grvfr8F6sUfLJuNs1OMncoP9VfrK5bwDW/Ok=
-
 assembly_info:
   patch: true
   file: AssemblyInfo.*
@@ -22,9 +15,8 @@ cache:
   - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
 
 before_build:
+  - nuget source list
   - nuget restore
-  - ruby scripts/postclean-ci.rb
-#  - ps: ruby ./packages/**/tools/ruby-test.rb
 
 build:
   project: ConsoleApp.sln 
